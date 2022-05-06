@@ -1,0 +1,45 @@
+$dark-green-01: #0a150f;
+
+html {
+    font-size: 16px;
+}
+
+body {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.side-bar {
+    height: 100vh;
+    width: 22rem;
+    background-color: $dark-green-01;
+    position: fixed;
+    color: #fff;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+
+    .wrapper {
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 2rem;
+            opacity: 0.7;
+            span {
+                margin-left: .5rem;
+                text-transform: capitalize;
+                font-size: 1.4rem;
+                font-weight: 500;
+                letter-spacing: .05rem;
+            }
+        }
+
+        .menu {
+            
+        }
+
+        .bottom-sheets {
+
+        }
+    }
+}
