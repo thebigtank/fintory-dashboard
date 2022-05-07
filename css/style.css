@@ -105,7 +105,7 @@ body {
   width: 26rem;
   height: 100vh;
   background-color: #f8faf7;
-  border-right: 2px solid #ebebeb;
+  border-right: 1px solid #ebebeb;
 }
 
 .content .wrapper .card-head {
@@ -119,7 +119,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 2px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
 }
 
 .content .wrapper .card-head h1 {
@@ -136,11 +136,13 @@ body {
 }
 
 .content .wrapper .cards-list li {
-  padding: 1.6rem 3rem;
-  border-bottom: 2px solid #ebebeb;
+  position: relative;
+  padding: 1.85rem 3rem;
+  border-bottom: 1px solid #ebebeb;
   cursor: pointer;
   overflow: hidden;
-  position: relative;
+  -webkit-transition: 50ms all ease-in-out;
+  transition: 50ms all ease-in-out;
 }
 
 .content .wrapper .cards-list .card-details .title {
@@ -215,10 +217,12 @@ body {
   background-color: #fff;
   border-top-left-radius: 12px;
   border: 1px solid #ebebeb;
+  -webkit-box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
+          box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
 }
 
 .content .wrapper .cards-list .card-design .stripe {
-  height: 1.2rem;
+  height: 1.35rem;
   width: 100%;
   background: linear-gradient(45deg, #eaeaea, #f8faf7);
   position: relative;
@@ -229,8 +233,34 @@ body {
   position: absolute;
   top: 3.4rem;
   left: 1.6rem;
-  font-size: .85rem;
+  font-size: .95rem;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+.content .wrapper .cards-list li:hover {
+  background: #1f332b;
+  color: #fff;
+}
+
+.content .wrapper .cards-list li:hover .card-details .status::before {
+  background-color: #fff;
+}
+
+.content .wrapper .cards-list li:hover .card-details .count {
+  background-color: #305344;
+}
+
+.content .wrapper .cards-list li:hover .card-design {
+  background-color: #305344;
+  border: none;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.content .wrapper .cards-list li:hover .card-design .stripe {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
 }
 /*# sourceMappingURL=style.css.map */

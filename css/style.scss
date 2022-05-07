@@ -1,4 +1,6 @@
 $dark-green-01: #0a150f;
+$dark-green-02: #1f332b;
+$dark-green-03: #305344;
 $light-green-01: #97f675;
 $grey: #ebebeb;
 $grey-02: #eaeaea;
@@ -95,7 +97,7 @@ body {
             width: 26rem;
             height: 100vh;
             background-color: #f8faf7;
-            border-right: 2px solid $grey;
+            border-right: 1px solid $grey;
         }
 
         .card-head {
@@ -103,7 +105,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 2px solid $grey;
+            border-bottom: 1px solid $grey;
             h1 {
                 font-size: 1.7rem;
                 font-weight: 600;
@@ -119,11 +121,12 @@ body {
 
         .cards-list {
             li {
-                padding: 1.6rem 3rem;
-                border-bottom: 2px solid $grey;
+                position: relative;
+                padding: 1.85rem 3rem;
+                border-bottom: 1px solid $grey;
                 cursor: pointer;
                 overflow: hidden;
-                position: relative;
+                transition: 50ms all ease-in-out;
             }
             .card-details {
                 .title {
@@ -149,7 +152,6 @@ body {
                         left: 0;
                         top: 50%;
                         transform: translate(0, -50%);
-
                     }
                 }
                 .access {
@@ -183,8 +185,9 @@ body {
                 background-color: #fff;
                 border-top-left-radius: 12px;
                 border: 1px solid #ebebeb;
+                box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
                 .stripe {
-                    height: 1.2rem;
+                    height: 1.35rem;
                     width: 100%;
                     background: linear-gradient(45deg, $grey-02, #f8faf7);
                     position: relative;
@@ -194,13 +197,37 @@ body {
                     position: absolute;
                     top: 3.4rem;
                     left: 1.6rem;
-                    font-size: .85rem;
+                    font-size: .95rem;
                     font-weight: 600;
                     letter-spacing: 1px;
+                }
+            }
+
+            li {
+                &:hover {
+                    background: #1f332b;
+                    color: #fff;
+                    .card-details {
+                        .status {
+                            &::before {
+                                background-color: #fff;
+                            }
+                        }
+                        .count {
+                            background-color: $dark-green-03;
+                        }
+                    }
+                    .card-design {
+                        background-color: $dark-green-03;
+                        border: none;
+                        transform: translateX(-30px);
+                        box-shadow: none;
+                        .stripe {
+                            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+                        }
+                    }
                 }
             }
         }
     }
 }
-
-// transform: translateX(-40px);
