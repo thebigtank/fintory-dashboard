@@ -5,6 +5,7 @@ html {
 body {
   position: relative;
   font-family: 'Poppins', sans-serif;
+  color: #0a150f;
 }
 
 .side-bar {
@@ -135,24 +136,27 @@ body {
 }
 
 .content .wrapper .cards-list li {
-  padding: 1.5rem 3rem;
+  padding: 1.6rem 3rem;
   border-bottom: 2px solid #ebebeb;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
 .content .wrapper .cards-list .card-details .title {
   text-transform: capitalize;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: 600;
 }
 
 .content .wrapper .cards-list .card-details .status {
   display: block;
   text-transform: uppercase;
-  font-size: .75rem;
+  font-size: .7rem;
   font-weight: 600;
   margin: .6rem 0;
   position: relative;
-  padding-left: 1rem;
+  padding-left: .8rem;
 }
 
 .content .wrapper .cards-list .card-details .status::before {
@@ -169,11 +173,64 @@ body {
 }
 
 .content .wrapper .cards-list .card-details .access {
-  font-size: .85rem;
+  font-size: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content .wrapper .cards-list .card-details .access .__txt {
   opacity: .8;
   font-weight: 500;
+}
+
+.content .wrapper .cards-list .card-details .access .count {
+  margin-left: .6rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #eaeaea;
+  height: 18px;
+  width: 22px;
+  font-size: .7rem;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+.content .wrapper .cards-list .card-design {
+  position: absolute;
+  right: -41px;
+  bottom: -1px;
+  width: 140px;
+  height: 92px;
+  background-color: #fff;
+  border-top-left-radius: 12px;
+  border: 1px solid #ebebeb;
+}
+
+.content .wrapper .cards-list .card-design .stripe {
+  height: 1.2rem;
+  width: 100%;
+  background: linear-gradient(45deg, #eaeaea, #f8faf7);
+  position: relative;
+  top: .75rem;
+}
+
+.content .wrapper .cards-list .card-design .last-four-digits {
+  position: absolute;
+  top: 3.4rem;
+  left: 1.6rem;
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 /*# sourceMappingURL=style.css.map */

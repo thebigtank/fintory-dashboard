@@ -1,6 +1,7 @@
 $dark-green-01: #0a150f;
 $light-green-01: #97f675;
 $grey: #ebebeb;
+$grey-02: #eaeaea;
 
 html {
     font-size: 16px;
@@ -9,6 +10,7 @@ html {
 body {
     position: relative;
     font-family: 'Poppins', sans-serif;
+    color: $dark-green-01;
 }
 
 .side-bar {
@@ -117,23 +119,26 @@ body {
 
         .cards-list {
             li {
-                padding: 1.5rem 3rem;
+                padding: 1.6rem 3rem;
                 border-bottom: 2px solid $grey;
+                cursor: pointer;
+                overflow: hidden;
+                position: relative;
             }
             .card-details {
                 .title {
                     text-transform: capitalize;
-                    font-size: 1rem;
+                    font-size: .9rem;
                     font-weight: 600;
                 }
                 .status {
                     display: block;
                     text-transform: uppercase;
-                    font-size: .75rem;
+                    font-size: .7rem;
                     font-weight: 600;
                     margin: .6rem 0;
                     position: relative;
-                    padding-left: 1rem;
+                    padding-left: .8rem;
                     &::before {
                         content: '';
                         height: 7px;
@@ -148,16 +153,54 @@ body {
                     }
                 }
                 .access {
-                    font-size: .85rem;
+                    font-size: .8rem;
+                    display: flex;
+                    align-items: center;
                     .__txt {
                         opacity: .8;
                         font-weight: 500;
                     }
                     .count {
-
+                        margin-left: .6rem;
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $grey-02;
+                        height: 18px;
+                        width: 22px;
+                        font-size: .7rem;
+                        font-weight: 600;
+                        border-radius: 3px;
                     }
+                }
+            }
+            .card-design {
+                position: absolute;
+                right: -41px;
+                bottom: -1px;
+                width: 140px;
+                height: 92px;
+                background-color: #fff;
+                border-top-left-radius: 12px;
+                border: 1px solid #ebebeb;
+                .stripe {
+                    height: 1.2rem;
+                    width: 100%;
+                    background: linear-gradient(45deg, $grey-02, #f8faf7);
+                    position: relative;
+                    top: .75rem;
+                }
+                .last-four-digits {
+                    position: absolute;
+                    top: 3.4rem;
+                    left: 1.6rem;
+                    font-size: .85rem;
+                    font-weight: 600;
+                    letter-spacing: 1px;
                 }
             }
         }
     }
 }
+
+// transform: translateX(-40px);
