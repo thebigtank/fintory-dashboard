@@ -15,9 +15,13 @@ body {
     color: $dark-green-01;
 }
 
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
 .side-bar {
     height: 100vh;
-    width: 18rem;
+    min-width: 18rem;
     background-color: $dark-green-01;
     position: fixed;
     color: #fff;
@@ -90,156 +94,223 @@ body {
     background-color: #fff;
     height: 100%;
     margin-left: 18rem;
-    
-    .wrapper {
+    display: flex;
+
+    .cards {
+        min-width: 26rem;
+        height: 100vh;
+        background-color: #f1f3f0;
+        border-right: 1px solid $grey;
+    }
+
+    .card-head {
+        background-color: #f8faf7;
+        padding: 3rem;
         display: flex;
-        .cards {
-            width: 26rem;
-            height: 100vh;
-            background-color: #f1f3f0;
-            border-right: 1px solid $grey;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $grey;
+        h1 {
+            font-size: 1.7rem;
+            font-weight: 600;
+        }
+        .btn {
+            font-size: 1.2rem;
+            border: none;
+            background: none;
+            margin-left: .8rem;
+            cursor: pointer;
+        }
+    }
+
+    .cards-list {
+        li {
+            background-color: #f8faf7;
+            position: relative;
+            padding: 1.85rem 3rem;
+            border-bottom: 1px solid $grey;
+            overflow: hidden;
+            transition: 50ms all ease-in-out;
+            cursor: pointer;
+        }
+        .card-details {
+            .title {
+                text-transform: capitalize;
+                font-size: .9rem;
+                font-weight: 600;
+            }
+            .status {
+                display: block;
+                text-transform: uppercase;
+                font-size: .7rem;
+                font-weight: 600;
+                margin: .6rem 0;
+                position: relative;
+                padding-left: .8rem;
+                &::before {
+                    content: '';
+                    height: 7px;
+                    width: 7px;
+                    background-color: #0a150f;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+            }
+            .access {
+                font-size: .8rem;
+                display: flex;
+                align-items: center;
+                .__txt {
+                    opacity: .8;
+                    font-weight: 500;
+                }
+                .count {
+                    margin-left: .6rem;
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $grey-02;
+                    height: 18px;
+                    width: 22px;
+                    font-size: .7rem;
+                    font-weight: 600;
+                    border-radius: 3px;
+                }
+            }
+        }
+        .card-design {
+            position: absolute;
+            right: -41px;
+            bottom: -1px;
+            width: 140px;
+            height: 92px;
+            background-color: #fff;
+            border-top-left-radius: 12px;
+            border: 1px solid #ebebeb;
+            box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
+            .stripe {
+                height: 1.35rem;
+                width: 100%;
+                background: linear-gradient(45deg, $grey-02, #f8faf7);
+                position: relative;
+                top: .75rem;
+            }
+            .last-four-digits {
+                position: absolute;
+                top: 3.4rem;
+                left: 1.6rem;
+                font-size: .95rem;
+                font-weight: 600;
+                letter-spacing: 1px;
+                color: $dark-green-02;
+            }
         }
 
-        .card-head {
-            background-color: #f8faf7;
-            padding: 3rem;
+        li {
+            &.active {
+                background: $dark-green-02;
+                border-bottom: 1px solid $dark-green-02;
+                color: #fff;
+                .card-details {
+                    .status {
+                        &::before {
+                            background-color: #fff;
+                        }
+                    }
+                    .count {
+                        background-color: $dark-green-03;
+                    }
+                }
+                .card-design {
+                    background-color: $dark-green-03;
+                    border: none;
+                    transform: translateX(-30px);
+                    box-shadow: none;
+                    .stripe {
+                        background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+                    }
+                    .last-four-digits {
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.disabled {
+                opacity: .6;
+                pointer-events: none;
+                margin-top: .8rem;
+                .card-details {
+                    .access {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-details {
+        width: 100%;
+        .wrapper {
+            width: 90%;
+            height: 100%;
+            margin: auto;
+            padding-top: 2.4em;
+        }
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid $grey;
-            h1 {
-                font-size: 1.7rem;
-                font-weight: 600;
-            }
-            .btn {
-                font-size: 1.2rem;
-                border: none;
-                background: none;
-                margin-left: .8rem;
-                cursor: pointer;
-            }
-        }
-
-        .cards-list {
-            li {
-                background-color: #f8faf7;
-                position: relative;
-                padding: 1.85rem 3rem;
-                border-bottom: 1px solid $grey;
-                overflow: hidden;
-                transition: 50ms all ease-in-out;
-                cursor: pointer;
-            }
-            .card-details {
-                .title {
-                    text-transform: capitalize;
-                    font-size: .9rem;
-                    font-weight: 600;
-                }
-                .status {
-                    display: block;
-                    text-transform: uppercase;
-                    font-size: .7rem;
-                    font-weight: 600;
-                    margin: .6rem 0;
+            .title {
+                display: flex;
+                align-items: center;
+                .logo {
                     position: relative;
-                    padding-left: .8rem;
-                    &::before {
-                        content: '';
-                        height: 7px;
-                        width: 7px;
-                        background-color: #0a150f;
-                        border-radius: 50%;
-                        position: absolute;
-                        left: 0;
-                        top: 50%;
-                        transform: translate(0, -50%);
-                    }
-                }
-                .access {
-                    font-size: .8rem;
                     display: flex;
                     align-items: center;
-                    .__txt {
-                        opacity: .8;
-                        font-weight: 500;
-                    }
-                    .count {
-                        margin-left: .6rem;
-                        display: inline-flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: $grey-02;
+                    justify-content: center;
+                    background-color: $light-green-01;
+                    width: 45px;
+                    height: 40px;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        display: block;
+                        width: 25px;
                         height: 18px;
-                        width: 22px;
-                        font-size: .7rem;
-                        font-weight: 600;
-                        border-radius: 3px;
+                        background-color: $dark-green-02;
+                        border-radius: 2px;
                     }
                 }
+                h1 {
+                    margin-left: 1.6rem;
+                    font-size: 1.85rem;
+                    font-weight: 700;
+                }
             }
-            .card-design {
-                position: absolute;
-                right: -41px;
-                bottom: -1px;
-                width: 140px;
-                height: 92px;
-                background-color: #fff;
-                border-top-left-radius: 12px;
-                border: 1px solid #ebebeb;
-                box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
-                .stripe {
-                    height: 1.35rem;
-                    width: 100%;
-                    background: linear-gradient(45deg, $grey-02, #f8faf7);
+            .manage {
+                text-transform: capitalize;
+                font-size: 1rem;
+                font-weight: 600;
+                background-color: transparent;
+                border: 2px solid $dark-green-02;
+                padding: .4rem 1.4rem;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                transition: 150ms all ease-in-out;
+                .fa-solid {
+                    margin-left: 1rem;
+                    font-size: 1.4rem;
                     position: relative;
-                    top: .75rem;
+                    top: 1px;
                 }
-                .last-four-digits {
-                    position: absolute;
-                    top: 3.4rem;
-                    left: 1.6rem;
-                    font-size: .95rem;
-                    font-weight: 600;
-                    letter-spacing: 1px;
-                }
-            }
 
-            li {
-                &.active, &:hover {
-                    background: $dark-green-02;
-                    border-bottom: 1px solid $dark-green-02;
+                &:hover {
+                    background-color: $dark-green-02;
                     color: #fff;
-                    .card-details {
-                        .status {
-                            &::before {
-                                background-color: #fff;
-                            }
-                        }
-                        .count {
-                            background-color: $dark-green-03;
-                        }
-                    }
-                    .card-design {
-                        background-color: $dark-green-03;
-                        border: none;
-                        transform: translateX(-30px);
-                        box-shadow: none;
-                        .stripe {
-                            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
-                        }
-                    }
-                }
-
-                &.disabled {
-                    opacity: .6;
-                    pointer-events: none;
-                    margin-top: .8rem;
-                    .card-details {
-                        .access {
-                            display: none;
-                        }
-                    }
                 }
             }
         }

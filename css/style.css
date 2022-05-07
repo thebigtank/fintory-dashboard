@@ -8,9 +8,13 @@ body {
   color: #0a150f;
 }
 
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
 .side-bar {
   height: 100vh;
-  width: 18rem;
+  min-width: 18rem;
   background-color: #0a150f;
   position: fixed;
   color: #fff;
@@ -93,22 +97,19 @@ body {
   background-color: #fff;
   height: 100%;
   margin-left: 18rem;
-}
-
-.content .wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.content .wrapper .cards {
-  width: 26rem;
+.content .cards {
+  min-width: 26rem;
   height: 100vh;
   background-color: #f1f3f0;
   border-right: 1px solid #ebebeb;
 }
 
-.content .wrapper .card-head {
+.content .card-head {
   background-color: #f8faf7;
   padding: 3rem;
   display: -webkit-box;
@@ -123,12 +124,12 @@ body {
   border-bottom: 1px solid #ebebeb;
 }
 
-.content .wrapper .card-head h1 {
+.content .card-head h1 {
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.content .wrapper .card-head .btn {
+.content .card-head .btn {
   font-size: 1.2rem;
   border: none;
   background: none;
@@ -136,7 +137,7 @@ body {
   cursor: pointer;
 }
 
-.content .wrapper .cards-list li {
+.content .cards-list li {
   background-color: #f8faf7;
   position: relative;
   padding: 1.85rem 3rem;
@@ -147,13 +148,13 @@ body {
   cursor: pointer;
 }
 
-.content .wrapper .cards-list .card-details .title {
+.content .cards-list .card-details .title {
   text-transform: capitalize;
   font-size: .9rem;
   font-weight: 600;
 }
 
-.content .wrapper .cards-list .card-details .status {
+.content .cards-list .card-details .status {
   display: block;
   text-transform: uppercase;
   font-size: .7rem;
@@ -163,7 +164,7 @@ body {
   padding-left: .8rem;
 }
 
-.content .wrapper .cards-list .card-details .status::before {
+.content .cards-list .card-details .status::before {
   content: '';
   height: 7px;
   width: 7px;
@@ -176,7 +177,7 @@ body {
           transform: translate(0, -50%);
 }
 
-.content .wrapper .cards-list .card-details .access {
+.content .cards-list .card-details .access {
   font-size: .8rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,12 +187,12 @@ body {
           align-items: center;
 }
 
-.content .wrapper .cards-list .card-details .access .__txt {
+.content .cards-list .card-details .access .__txt {
   opacity: .8;
   font-weight: 500;
 }
 
-.content .wrapper .cards-list .card-details .access .count {
+.content .cards-list .card-details .access .count {
   margin-left: .6rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -210,7 +211,7 @@ body {
   border-radius: 3px;
 }
 
-.content .wrapper .cards-list .card-design {
+.content .cards-list .card-design {
   position: absolute;
   right: -41px;
   bottom: -1px;
@@ -223,7 +224,7 @@ body {
           box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
 }
 
-.content .wrapper .cards-list .card-design .stripe {
+.content .cards-list .card-design .stripe {
   height: 1.35rem;
   width: 100%;
   background: linear-gradient(45deg, #eaeaea, #f8faf7);
@@ -231,30 +232,31 @@ body {
   top: .75rem;
 }
 
-.content .wrapper .cards-list .card-design .last-four-digits {
+.content .cards-list .card-design .last-four-digits {
   position: absolute;
   top: 3.4rem;
   left: 1.6rem;
   font-size: .95rem;
   font-weight: 600;
   letter-spacing: 1px;
+  color: #1f332b;
 }
 
-.content .wrapper .cards-list li.active, .content .wrapper .cards-list li:hover {
+.content .cards-list li.active {
   background: #1f332b;
   border-bottom: 1px solid #1f332b;
   color: #fff;
 }
 
-.content .wrapper .cards-list li.active .card-details .status::before, .content .wrapper .cards-list li:hover .card-details .status::before {
+.content .cards-list li.active .card-details .status::before {
   background-color: #fff;
 }
 
-.content .wrapper .cards-list li.active .card-details .count, .content .wrapper .cards-list li:hover .card-details .count {
+.content .cards-list li.active .card-details .count {
   background-color: #305344;
 }
 
-.content .wrapper .cards-list li.active .card-design, .content .wrapper .cards-list li:hover .card-design {
+.content .cards-list li.active .card-design {
   background-color: #305344;
   border: none;
   -webkit-transform: translateX(-30px);
@@ -263,17 +265,115 @@ body {
           box-shadow: none;
 }
 
-.content .wrapper .cards-list li.active .card-design .stripe, .content .wrapper .cards-list li:hover .card-design .stripe {
+.content .cards-list li.active .card-design .stripe {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
 }
 
-.content .wrapper .cards-list li.disabled {
+.content .cards-list li.active .card-design .last-four-digits {
+  color: #fff;
+}
+
+.content .cards-list li.disabled {
   opacity: .6;
   pointer-events: none;
   margin-top: .8rem;
 }
 
-.content .wrapper .cards-list li.disabled .card-details .access {
+.content .cards-list li.disabled .card-details .access {
   display: none;
+}
+
+.content .card-details {
+  width: 100%;
+}
+
+.content .card-details .wrapper {
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  padding-top: 2.4em;
+}
+
+.content .card-details .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.content .card-details .header .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .card-details .header .title .logo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #97f675;
+  width: 45px;
+  height: 40px;
+}
+
+.content .card-details .header .title .logo::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 18px;
+  background-color: #1f332b;
+  border-radius: 2px;
+}
+
+.content .card-details .header .title h1 {
+  margin-left: 1.6rem;
+  font-size: 1.85rem;
+  font-weight: 700;
+}
+
+.content .card-details .header .manage {
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid #1f332b;
+  padding: .4rem 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: 150ms all ease-in-out;
+  transition: 150ms all ease-in-out;
+}
+
+.content .card-details .header .manage .fa-solid {
+  margin-left: 1rem;
+  font-size: 1.4rem;
+  position: relative;
+  top: 1px;
+}
+
+.content .card-details .header .manage:hover {
+  background-color: #1f332b;
+  color: #fff;
 }
 /*# sourceMappingURL=style.css.map */
