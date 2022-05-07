@@ -96,11 +96,12 @@ body {
         .cards {
             width: 26rem;
             height: 100vh;
-            background-color: #f8faf7;
+            background-color: #f1f3f0;
             border-right: 1px solid $grey;
         }
 
         .card-head {
+            background-color: #f8faf7;
             padding: 3rem;
             display: flex;
             align-items: center;
@@ -121,12 +122,13 @@ body {
 
         .cards-list {
             li {
+                background-color: #f8faf7;
                 position: relative;
                 padding: 1.85rem 3rem;
                 border-bottom: 1px solid $grey;
-                cursor: pointer;
                 overflow: hidden;
                 transition: 50ms all ease-in-out;
+                cursor: pointer;
             }
             .card-details {
                 .title {
@@ -204,8 +206,9 @@ body {
             }
 
             li {
-                &:hover {
-                    background: #1f332b;
+                &.active, &:hover {
+                    background: $dark-green-02;
+                    border-bottom: 1px solid $dark-green-02;
                     color: #fff;
                     .card-details {
                         .status {
@@ -224,6 +227,17 @@ body {
                         box-shadow: none;
                         .stripe {
                             background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+                        }
+                    }
+                }
+
+                &.disabled {
+                    opacity: .6;
+                    pointer-events: none;
+                    margin-top: .8rem;
+                    .card-details {
+                        .access {
+                            display: none;
                         }
                     }
                 }

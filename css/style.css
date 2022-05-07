@@ -104,11 +104,12 @@ body {
 .content .wrapper .cards {
   width: 26rem;
   height: 100vh;
-  background-color: #f8faf7;
+  background-color: #f1f3f0;
   border-right: 1px solid #ebebeb;
 }
 
 .content .wrapper .card-head {
+  background-color: #f8faf7;
   padding: 3rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,13 +137,14 @@ body {
 }
 
 .content .wrapper .cards-list li {
+  background-color: #f8faf7;
   position: relative;
   padding: 1.85rem 3rem;
   border-bottom: 1px solid #ebebeb;
-  cursor: pointer;
   overflow: hidden;
   -webkit-transition: 50ms all ease-in-out;
   transition: 50ms all ease-in-out;
+  cursor: pointer;
 }
 
 .content .wrapper .cards-list .card-details .title {
@@ -238,20 +240,21 @@ body {
   letter-spacing: 1px;
 }
 
-.content .wrapper .cards-list li:hover {
+.content .wrapper .cards-list li.active, .content .wrapper .cards-list li:hover {
   background: #1f332b;
+  border-bottom: 1px solid #1f332b;
   color: #fff;
 }
 
-.content .wrapper .cards-list li:hover .card-details .status::before {
+.content .wrapper .cards-list li.active .card-details .status::before, .content .wrapper .cards-list li:hover .card-details .status::before {
   background-color: #fff;
 }
 
-.content .wrapper .cards-list li:hover .card-details .count {
+.content .wrapper .cards-list li.active .card-details .count, .content .wrapper .cards-list li:hover .card-details .count {
   background-color: #305344;
 }
 
-.content .wrapper .cards-list li:hover .card-design {
+.content .wrapper .cards-list li.active .card-design, .content .wrapper .cards-list li:hover .card-design {
   background-color: #305344;
   border: none;
   -webkit-transform: translateX(-30px);
@@ -260,7 +263,17 @@ body {
           box-shadow: none;
 }
 
-.content .wrapper .cards-list li:hover .card-design .stripe {
+.content .wrapper .cards-list li.active .card-design .stripe, .content .wrapper .cards-list li:hover .card-design .stripe {
   background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+}
+
+.content .wrapper .cards-list li.disabled {
+  opacity: .6;
+  pointer-events: none;
+  margin-top: .8rem;
+}
+
+.content .wrapper .cards-list li.disabled .card-details .access {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */
