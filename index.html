@@ -7,7 +7,8 @@
     <title>Fintory Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,10 +20,94 @@
                 <ion-icon name="aperture"></ion-icon>
                 <span>fintory</span>
             </h1>
-            <nav class="menu"></nav>
-            <footer class="bottom-sheets"></footer>
+            <nav class="main-menu">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-house"></i>
+                            <span>home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span>accounts</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="fa-solid fa-credit-card"></i>
+                            <span>cards</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-comments-dollar"></i>
+                            <span>payments</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-people-group"></i>
+                            <span>team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <footer class="bottom-sheets">
+                <nav class="footer-menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-circle-question"></i>
+                                <span>help</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                <span>log out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </footer>
         </div>
     </div>
+
+    <section class="content">
+        <div class="wrapper">
+            <div class="cards">
+                <div class="card-head">
+                    <h1>Cards list</h1>
+                    <div class="btn-options">
+                        <button class="btn filter"><i class="fa-solid fa-bars-staggered"></i></button>
+                        <button class="btn add"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+                <ul class="cards-list">
+                    <li>
+                        <div class="card-details">
+                            <h2 class="title">basic corporate</h2>
+                            <span class="status">active</span>
+                            <div class="access">
+                                <span class="__txt">Issued access</span>
+                                <span class="count">2</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-details">
+            </div>
+        </div>
+    </section>
 
 
     
