@@ -375,6 +375,44 @@ button {
                     background-color: $grey;
                 }
             }
+
+            &.spendings {
+                .spending-limits {
+                    .title {
+
+                    }
+                }
+
+                .spending-limits-stats {
+                    .__title {
+
+                    }
+                    .progress-bar {
+                        .progress-fill {
+
+                        }
+                    }
+                    .stats-data {
+                        .spent {
+
+                        }
+                        .percentage {
+
+                        }
+                    }
+                }
+
+                .estimated {
+                    .desc {
+
+                    }
+                    .grp {
+                        .amount {
+                            
+                        }
+                    }
+                }
+            }
         }
     }
 }
