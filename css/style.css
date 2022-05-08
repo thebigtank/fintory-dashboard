@@ -304,6 +304,7 @@ button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 5.6rem;
 }
 
 .content .card-details .header .title {
@@ -343,8 +344,8 @@ button {
 
 .content .card-details .header .title h1 {
   margin-left: 1.6rem;
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 600;
 }
 
 .content .card-details .header .manage {
@@ -375,5 +376,75 @@ button {
 .content .card-details .header .manage:hover {
   background-color: #1f332b;
   color: #fff;
+}
+
+.content .card-details .row {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.content .card-details .row.details {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[7];
+      grid-template-columns: repeat(7, auto);
+  border-bottom: 1px solid #ebebeb;
+}
+
+.content .card-details .row.details .title {
+  display: block;
+  text-transform: uppercase;
+  font-size: .85rem;
+  font-weight: 600;
+  opacity: .3;
+  margin-bottom: 1rem;
+}
+
+.content .card-details .row.details .value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: top;
+      -ms-flex-align: top;
+          align-items: top;
+}
+
+.content .card-details .row.details .value .__value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.content .card-details .row.details .card-number .fa-regular {
+  font-size: 1.3rem;
+  margin-left: .8rem;
+  position: relative;
+  bottom: 2px;
+}
+
+.content .card-details .row.details .cvv .value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content .card-details .row.details .cvv .value .fa-solid {
+  font-size: .7rem;
+  margin-left: -0.25rem;
+  position: relative;
+  bottom: 2px;
+}
+
+.content .card-details .row.details .cvv .value .fa-regular {
+  margin-left: .85rem;
+  font-size: 1.15rem;
+}
+
+.content .card-details .row.details .divider {
+  width: 1px;
+  background-color: #ebebeb;
 }
 /*# sourceMappingURL=style.css.map */
