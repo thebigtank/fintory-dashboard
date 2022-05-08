@@ -447,4 +447,110 @@ button {
   width: 1px;
   background-color: #ebebeb;
 }
+
+.content .card-details .row.spendings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 4rem;
+}
+
+.content .card-details .row.spendings .spending-limits {
+  width: 50%;
+}
+
+.content .card-details .row.spendings .spending-limits .title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 2.3rem;
+}
+
+.content .card-details .row.spendings .spending-limits-stats .__title {
+  text-transform: uppercase;
+  font-size: .85rem;
+  font-weight: 700;
+  opacity: .3;
+}
+
+.content .card-details .row.spendings .spending-limits-stats .progress-bar {
+  width: 100%;
+  height: 14px;
+  background-color: #ebebeb;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.content .card-details .row.spendings .spending-limits-stats .progress-bar .progress-fill {
+  display: block;
+  height: inherit;
+  width: 10%;
+  background-color: #305344;
+}
+
+.content .card-details .row.spendings .spending-limits-stats .stats-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: .95rem;
+  font-weight: 600;
+  color: #398f6a;
+}
+
+.content .card-details .row.spendings .estimated {
+  position: relative;
+  background-color: #f8faf7;
+  color: #398f6a;
+  width: 50%;
+  padding: 1.6rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow: hidden;
+}
+
+.content .card-details .row.spendings .estimated .desc {
+  color: #305344;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.65rem;
+}
+
+.content .card-details .row.spendings .estimated .amount {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 1.2rem;
+}
+
+.content .card-details .row.spendings .estimated a.btn {
+  text-decoration: none;
+  position: absolute;
+  right: -46px;
+  top: 46px;
+  font-size: 1.4rem;
+  color: #398f6a;
+  background-color: #f1f3f0;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content .card-details .row.spendings .estimated a.btn .fa-solid {
+  position: absolute;
+  bottom: 72px;
+  left: 46px;
+}
 /*# sourceMappingURL=style.css.map */
