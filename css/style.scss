@@ -259,6 +259,12 @@ button {
             margin: auto;
             padding-top: 2.4em;
         }
+        
+        .row {
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
         .header {
             display: flex;
             align-items: center;
@@ -315,147 +321,146 @@ button {
                 }
             }
         }
-
-        .row {
+        
+        
+        .details {
             padding-bottom: 2rem;
             margin-bottom: 2rem;
-            &.details {
-                display: grid;
-                grid-template-columns: repeat(7, auto);
-                border-bottom: 1px solid $grey;
-                .title {
-                    display: block;
-                    text-transform: uppercase;
-                    font-size: .85rem;
-                    font-weight: 600;
-                    opacity: .3;
-                    margin-bottom: 1rem;
-                }
+            display: grid;
+            grid-template-columns: repeat(7, auto);
+            border-bottom: 1px solid $grey;
+            .title {
+                display: block;
+                text-transform: uppercase;
+                font-size: .85rem;
+                font-weight: 600;
+                opacity: .3;
+                margin-bottom: 1rem;
+            }
 
-                .value {
-                    display: flex;
-                    align-items: top;
-                    .__value {
-                        font-size: 1.1rem;
-                        font-weight: 500;
-                        text-transform: capitalize;
-                    }
-                }
-
-                // we need to target the icon from card-number and increase the size
-                .card-number {
-                    .fa-regular {
-                        font-size: 1.3rem;
-                        margin-left: .8rem;
-                        position: relative;
-                        bottom: 2px;
-                    }
-                }
-
-                // we need to target the icons from CVV and style them differently
-                .cvv {
-                    .value {
-                        display: flex;
-                        align-items: center;
-                        .fa-solid {
-                            font-size: .7rem;
-                            margin-left: -0.25rem;
-                            position: relative;
-                            bottom: 2px;
-                        }
-                        .fa-regular {
-                            margin-left: .85rem;
-                            font-size: 1.15rem;
-                        }
-                    }
-                }
-
-                .divider {
-                    width: 1px;
-                    background-color: $grey;
+            .value {
+                display: flex;
+                align-items: top;
+                .__value {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    text-transform: capitalize;
                 }
             }
 
-            &.spendings {
-                display: flex;
-                justify-content: space-between;
-                gap: 4rem;
-                .spending-limits {
-                    width: 50%;
-                    .title {
-                        font-size: 1.3rem;
-                        font-weight: 700;
-                        margin-bottom: 2.3rem;
-                    }
-                }
-
-                .spending-limits-stats {
-                    .__title {
-                        text-transform: uppercase;
-                        font-size: .85rem;
-                        font-weight: 700;
-                        opacity: .3;
-                    }
-                    .progress-bar {
-                        width: 100%;
-                        height: 14px;
-                        background-color: $grey;
-                        overflow: hidden;
-                        margin: 1rem 0;
-                        .progress-fill {
-                            display: block;
-                            height: inherit;
-                            width: 10%;
-                            background-color: $dark-green-03;
-                        }
-                    }
-                    .stats-data {
-                        display: flex;
-                        justify-content: space-between;
-                        font-size: .95rem;
-                        font-weight: 600;
-                        color: #398f6a;
-                    }
-                }
-
-                .estimated {
+            // we need to target the icon from card-number and increase the size
+            .card-number {
+                .fa-regular {
+                    font-size: 1.3rem;
+                    margin-left: .8rem;
                     position: relative;
-                    background-color: #f8faf7;
-                    color: #398f6a;
-                    width: 50%;
-                    padding: 1.6rem;
-                    box-sizing: border-box;
-                    overflow: hidden;
-                    .desc {
-                        color: $dark-green-03;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        line-height: 1.65rem;
+                    bottom: 2px;
+                }
+            }
+
+            // we need to target the icons from CVV and style them differently
+            .cvv {
+                .value {
+                    display: flex;
+                    align-items: center;
+                    .fa-solid {
+                        font-size: .7rem;
+                        margin-left: -0.25rem;
+                        position: relative;
+                        bottom: 2px;
                     }
+                    .fa-regular {
+                        margin-left: .85rem;
+                        font-size: 1.15rem;
+                    }
+                }
+            }
+
+            .divider {
+                width: 1px;
+                background-color: $grey;
+            }
+        }
+
+        .spendings {
+            display: flex;
+            justify-content: space-between;
+            gap: 4rem;
+            .spending-limits {
+                width: 50%;
+                .title {
+                    font-size: 1.3rem;
+                    font-weight: 700;
+                    margin-bottom: 2.3rem;
+                }
+            }
+
+            .spending-limits-stats {
+                .__title {
+                    text-transform: uppercase;
+                    font-size: .85rem;
+                    font-weight: 700;
+                    opacity: .3;
+                }
+                .progress-bar {
+                    width: 100%;
+                    height: 14px;
+                    background-color: $grey;
+                    overflow: hidden;
+                    margin: 1rem 0;
+                    .progress-fill {
+                        display: block;
+                        height: inherit;
+                        width: 10%;
+                        background-color: $dark-green-03;
+                    }
+                }
+                .stats-data {
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: .95rem;
+                    font-weight: 600;
+                    color: #398f6a;
+                }
+            }
+
+            .estimated {
+                position: relative;
+                background-color: #f8faf7;
+                color: #398f6a;
+                width: 50%;
+                padding: 1.6rem;
+                box-sizing: border-box;
+                overflow: hidden;
+                .desc {
+                    color: $dark-green-03;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    line-height: 1.65rem;
+                }
+                .grp {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 1.2rem;
                     .amount {
                         font-size: 1.2rem;
                         font-weight: 700;
-                        margin-top: 1.2rem;
                     }
                     a.btn {
                         text-decoration: none;
-                        position: absolute;
-                        right: -46px;
-                        top: 46px;
+                        // position: absolute;
+                        // right: -46px;
+                        // top: 46px;
                         font-size: 1.4rem;
                         color: #398f6a;
-                        background-color: #f1f3f0;
-                        width: 140px;
-                        height: 140px;
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        .fa-solid {
-                            position: absolute;
-                            bottom: 72px;
-                            left: 46px;
-                        }
+                        // background-color: #f1f3f0;
+                        // width: 140px;
+                        // height: 140px;
+                        // border-radius: 50%;
+                        // display: flex;
+                        // align-items: center;
+                        // justify-content: center;
                     }
                 }
             }
