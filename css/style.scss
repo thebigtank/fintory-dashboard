@@ -87,6 +87,37 @@ button {
             position: absolute;
             bottom: 0;
         }
+
+        .profile-action {
+            display: inline-flex;
+            align-items: center;
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            .avatar {
+                height: 45px;
+                width: 45px;
+                overflow: hidden;
+                border-radius: 50%;
+                img {
+                    max-width: 100%;
+                }
+            }
+            .grp {
+                margin-left: 1rem;
+                .user {
+                    text-transform: capitalize;
+                    font-size: 1.1rem;
+                    margin-bottom: .25rem;
+                }
+                a {
+                    text-decoration: none;
+                    font-size: .75rem;
+                    color: #fff;
+                    opacity: .5;
+                }
+            }
+        }
     }
 }
 
@@ -130,7 +161,6 @@ button {
             padding: 1.85rem 3rem;
             border-bottom: 1px solid $grey;
             overflow: hidden;
-            transition: 50ms all ease-in-out;
             cursor: pointer;
         }
         .card-details {
@@ -190,6 +220,8 @@ button {
             background-color: #fff;
             border-top-left-radius: 12px;
             border: 1px solid #ebebeb;
+            transform: translateX(10px);
+            transition: 150ms transform ease-in-out;
             box-shadow: 5px 15px 17px 2px rgba(210, 210, 210, 0.45);
             .stripe {
                 height: 1.35rem;
@@ -210,7 +242,7 @@ button {
         }
 
         li {
-            &.active {
+            &.active, &:hover {
                 background: $dark-green-02;
                 border-bottom: 1px solid $dark-green-02;
                 color: #fff;
@@ -251,7 +283,7 @@ button {
         }
     }
 
-    .card-details {
+    .card-data {
         width: 100%;
         .wrapper {
             width: 90%;
@@ -259,18 +291,13 @@ button {
             margin: auto;
             padding-top: 2.4em;
         }
-        
-        .row {
-            padding-bottom: 2rem;
-            margin-bottom: 2rem;
-        }
 
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 5.6rem;
-            .title {
+            &__title {
                 display: flex;
                 align-items: center;
                 .logo {
@@ -386,12 +413,18 @@ button {
             display: flex;
             justify-content: space-between;
             gap: 4rem;
+            border-bottom: 1px solid $grey;
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
             .spending-limits {
                 width: 50%;
                 .title {
                     font-size: 1.3rem;
                     font-weight: 700;
                     margin-bottom: 2.3rem;
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
                 }
             }
 
@@ -435,8 +468,8 @@ button {
                 .desc {
                     color: $dark-green-03;
                     font-size: 1rem;
-                    font-weight: 600;
-                    line-height: 1.65rem;
+                    font-weight: 500;
+                    line-height: 1.4rem;
                 }
                 .grp {
                     display: flex;
@@ -445,22 +478,120 @@ button {
                     margin-top: 1.2rem;
                     .amount {
                         font-size: 1.2rem;
-                        font-weight: 700;
+                        font-weight: 600;
                     }
                     a.btn {
-                        text-decoration: none;
-                        // position: absolute;
-                        // right: -46px;
-                        // top: 46px;
+                        position: relative;
                         font-size: 1.4rem;
                         color: #398f6a;
-                        // background-color: #f1f3f0;
-                        // width: 140px;
-                        // height: 140px;
-                        // border-radius: 50%;
-                        // display: flex;
-                        // align-items: center;
-                        // justify-content: center;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: -45px;
+                            left: -50px;
+                            display: block;
+                            height: 140px;
+                            width: 140px;
+                            border-radius: 50%;
+                            background-color: #f1f3f0;
+                        }
+                        i {
+                            position: relative;
+                        }
+                    }
+                }
+            }
+        }
+
+        .issued-access, .recent-transactions {
+            border-bottom: 1px solid #ebebeb;
+            margin-bottom: 2rem;
+            .header {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-bottom: 2.3rem;
+            }
+            .title {
+                font-size: 1.3rem;
+                font-weight: 700;
+                &::first-letter {
+                    text-transform: uppercase;
+                }
+            }
+            .count {
+                margin-left: 1rem;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $grey-02;
+                height: 24px;
+                width: 28px;
+                font-size: .9rem;
+                font-weight: 600;
+                border-radius: 3px;
+            }
+            .period {
+                margin-left: 2rem;
+                display: inline-flex;
+                background-color: $grey-02;
+                padding: 6px 12px;
+                font-weight: 600;
+            }
+
+            table {
+                width: 100%;
+                tr {
+                    border-bottom: 16px solid transparent;
+                }
+                td {
+                    vertical-align: middle;
+                }
+                .user {
+                    display: flex;
+                    align-items: center;
+                    .avatar {
+                        height: 45px;
+                        width: 45px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+                    .username {
+                        text-transform: capitalize;
+                        font-size: 1rem;
+                        margin-left: 1rem;
+                    }
+                }
+                .item {
+                    text-transform: capitalize;
+                    opacity: .5;
+                }
+                .grp {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .price {
+                        font-weight: 600;
+                    }
+                    a {
+                        font-size: 1.2rem;
+                        color: #000;
+                        margin-left: 1rem;
+                        position: relative;
+                        top: 2px;
+                    }
+                }
+            }
+        }
+
+        .recent-transactions {
+            table {
+                .grp {
+                    .price {
+                        font-weight: 700;
                     }
                 }
             }
